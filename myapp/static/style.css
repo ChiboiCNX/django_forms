@@ -1,0 +1,153 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  background: linear-gradient(135deg, #71b7e6, #9b59b6);
+}
+
+.container {
+  max-width: 700px;
+  width: 100%;
+  background: #fff;
+  padding: 25px 30px;
+  border-radius: 5px;
+}
+
+.container .title {
+  font-size: 25px;
+  font-weight: 500;
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.container .title::before {
+  content: "";
+  position: absolute;
+  height: 3px;
+  width: 30px;
+  background: linear-gradient(135deg, #71b7e6, #9b59b6);
+  left: 0;
+  bottom: 0;
+}
+
+.container form .user-details {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.container form .user-details .input-box {
+  width: calc(100% / 2 - 20px);
+  margin-bottom: 15px;
+}
+
+.container form .user-details .input-box .details {
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.container form .user-details .input-box input {
+  height: 45px;
+  width: 100%;
+  outline: none;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  padding-left: 15px;
+  font-size: 16px;
+}
+
+.container form .user-details .input-box input:focus {
+  border-color: #9b59b6;
+  box-shadow: 0 0 5px rgba(155, 89, 182, 0.5);
+}
+
+.container form .user-details .button {
+  margin: 4px;
+  padding: 4px;
+}
+
+.container form .user-details .button button {
+  color: #fffcfc;
+  background: #9b59b6;
+  border: none;
+  margin: 13px 0 14px;
+  font-size: 1.1rem;
+  padding: 10px;
+  border-radius: 4px;
+  box-shadow: rgba(255, 255, 255, 0.2);
+}
+
+.container form .user-details .button button:hover {
+  background-color: #8e44ad;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.container form .user-details .button button:active {
+  background: #71b7e6;
+}
+
+/* Gender Section Styling */
+.gender-details {
+  margin: 20px 0;
+}
+
+.gender-title {
+  font-weight: 500;
+  font-size: 18px;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.category {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  gap: 20px;
+}
+
+.category label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.category input[type="radio"] {
+  display: none;
+}
+
+.dot {
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  border: 2px solid #9b59b6;
+  margin-right: 10px;
+  position: relative;
+}
+
+input[type="radio"]:checked + .dot {
+  background: #9b59b6;
+}
+
+input[type="radio"]:checked + .dot::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 10px;
+  width: 10px;
+  background: #fff;
+  border-radius: 50%;
+}

@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cit 306 Assignment</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="title">Registration</div>
+      <form method="post" action="{% url 'registration' %}">
+        {% csrf_token %} {% if error %}
+        <div class="error">{{ error }}</div>
+        {% endif %}
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">Full Name</span>
+            {{ form.full_name.errors }} {{ form.full_name }}
+          </div>
+          <div class="input-box">
+            <span class="details">Registration number</span>
+            {{ form.registration_number.errors }} {{ form.registration_number }}
+          </div>
+          <div class="input-box">
+            <span class="details">Department</span>
+            {{ form.department.errors }} {{ form.department }}
+          </div>
+          <div class="input-box">
+            <span class="details">Faculty</span>
+            {{ form.faculty.errors }} {{ form.faculty }}
+          </div>
+          <div class="input-box">
+            <span class="details">Level</span>
+            {{ form.level.errors }} {{ form.level }}
+          </div>
+          <div class="input-box">
+            <span class="details">Phone number</span>
+            {{ form.phone_number.errors }} {{ form.phone_number }}
+          </div>
+
+          <!-- Gender Section -->
+          <div class="gender-details">
+            <span class="gender-title">Gender</span>
+            {{ form.gender.errors }} {{ form.gender }}
+          </div>
+          <!-- Submit Button -->
+          <div class="button">
+            <button type="submit" id="submitButton">Submit</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

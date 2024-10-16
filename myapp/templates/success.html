@@ -1,0 +1,74 @@
+<!-- myapp/templates/success.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration Successful</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f9;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      .container {
+        background-color: #fff;
+        padding: 2em;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+      h1 {
+        color: rgb(206, 0, 206);
+      }
+      p {
+        font-size: 1.2em;
+        margin: 1em 0;
+      }
+      .button {
+        margin-top: 2em;
+      }
+      .button a {
+        text-decoration: none;
+        color: white;
+        background-color: rgb(206, 0, 206);
+        padding: 0.75em 1.5em;
+        border-radius: 5px;
+        font-size: 1em;
+      }
+      .button a:hover {
+        background-color: rgb(116, 0, 116);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Registration Successful!</h1>
+      <p>Thank you for registering. Your information has been saved.</p>
+
+      <!-- Optional Section: Summary of the submitted information -->
+      <!-- You can choose to display the user-submitted information like this: -->
+
+      <div class="summary">
+        <h2>Your Submitted Information:</h2>
+        <p><strong>Full Name:</strong> {{ full_name }}</p>
+        <p><strong>Registration Number:</strong> {{ registration_number }}</p>
+        <p><strong>Department:</strong> {{ department }}</p>
+        <p><strong>Faculty:</strong> {{ faculty }}</p>
+        <p><strong>Level:</strong> {{ level }}</p>
+        <p><strong>Phone Number:</strong> {{ phone_number }}</p>
+        <p><strong>Gender:</strong> {{ gender }}</p>
+      </div>
+
+      <!-- Add a button to go back to the registration page -->
+      <div class="button">
+        <a href="{% url 'registration' %}">Go Back to Registration</a>
+      </div>
+    </div>
+  </body>
+</html>
